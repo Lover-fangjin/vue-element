@@ -1,14 +1,14 @@
 <template>
-    <el-submenu v-if="menu.childMenu && menu.childMenu.length >= 1" :index="'' + menu.id">
+    <el-submenu v-if="menu.children && menu.children.length >= 1" :index="'' + menu.id">
         <template slot="title">
             <i :class="menu.icon"></i>
-            <span>{{menu.menuName}}</span>
+            <span>{{menu.label}}</span>
         </template>
-        <NavMenu v-for="item in menu.childMenu" :key="item.id" :menu="item"></NavMenu>
+        <NavMenu v-for="item in menu.children" :key="item.id" :menu="item"></NavMenu>
     </el-submenu>
     <el-menu-item v-else :index="menu.id.toString()" @click="clickMenuItem(menu)">
         <i :class="menu.icon"></i>
-        <span slot="title">{{menu.menuName}}</span>
+        <span slot="title">{{menu.label}}</span>
     </el-menu-item>  
 </template>
 
@@ -25,6 +25,7 @@
         },
         methods: {
             clickMenuItem(_info) {
+                debugger
                 this.$router.push(_info.path)
             }
         },

@@ -1,62 +1,41 @@
 import Vue from "vue";
 import VueRouter from "vue-router";
-import Home from "../views/Home.vue";
+import Home from "../views/Index.vue";
 import Login from "../views/login";
-import Displace from "../views/alarm/Displace.vue";
-import WallVertical from "../views/alarm/WallVertical.vue";
-import WallHertical from "../views/alarm/WallHertical.vue";
-import SurfaceDis from "../views/alarm/SurfaceDis.vue";
-import Buildings from "../views/alarm/Buildings.vue";
-import Tmp from "../views/alarm/Tmp.vue";
+import NotFound from "../views/Tmp.vue";
+import Tenant from '../views/basic/tenant/Tenant'
 
-import Dendrogram from '../views/antv/Dendrogram.vue'
-import DragNodeTree from '../views/antv/DragNodeTree.vue' 
+import basics from './basic' //基础管理
+import Bb from '../views/basic'
 
 Vue.use(VueRouter);
 
 const routes = [
   {
-    path: "/login",
-    name: "login",
-    component: Login
-  },
-  {
-    path: "/home",
+    path: "/",
     name: "Home",
     component: Home,
+    meta: { title:'首页'},
     children: [
       {
-        path: "/home/displace",
-        name: "Displace",
-        component: Dendrogram,
+        path: "/manage",
+        name: "Manage",
+        component: Bb,
+        children:basics,
+        meta: { title:'基础管理'},
       },
       {
-        path: "/home/wallVertical",
-        name: "wallVertical",
-        component: DragNodeTree,
+        path: "/manage/tmp",
+        name: "NotFound",
+        component: NotFound,
       },
-      {
-        path: "/home/wallHertical",
-        name: "wallHertical",
-        component: Tmp,
-      },
-      {
-        path: "/home/surfaceDis",
-        name: "surfaceDis",
-        component: Tmp,
-      },
-      {
-        path: "/home/buildings",
-        name: "buildings",
-        component: Tmp,
-      },
-      {
-        path: "/home/tmp",
-        name: "tmp",
-        component: Tmp ,
-      },
-      { path: '*', redirect: '/home/tmp', hidden: true }
+      { path: '*', redirect: '/manage/tmp', hidden: true }
     ]
+  },
+  {
+    path: "/login",
+    name: "login",
+    component: Login,
   },
 ];
 

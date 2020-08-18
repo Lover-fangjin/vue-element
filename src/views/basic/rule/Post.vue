@@ -1,7 +1,6 @@
 <template>
     <div>
-        西西西西西西西西
-        西西西西西西西西
+        <h1>岗位配置</h1>
     </div>
 </template>
 

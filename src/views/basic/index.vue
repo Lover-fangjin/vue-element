@@ -1,7 +1,6 @@
 <template>
     <div>
-        西西西西西西西西
-        西西西西西西西西
+        <router-view></router-view>　
     </div>
 </template>
 

@@ -1,5 +1,5 @@
 import {login, logout} from './user.js'
-import { getDisplace } from './monitor.js'
+// import { getDisplace } from './monitor.js'
 
 const Mock = require('mockjs') // 获取mock对象
 const Random = Mock.Random // 获取random对象，随机生成各种数据，具体请翻阅文档
@@ -38,5 +38,5 @@ Mock.mock(`${domain}/posts`, 'get', postData);
 
 Mock.mock(`${domain}/user/login`, 'post', login);
 Mock.mock(`${domain}/user/logout`, 'get', logout);
-Mock.mock(`${domain}/monitor/displace`, 'get', getDisplace);
+// Mock.mock(`${domain}/monitor/displace`, 'get', getDisplace);
 

@@ -9,6 +9,7 @@ const state = {
     code: '200',
     msg: 'success !'
   },
+  selectedMenu:{}
 };
 
 // 定义所需的 mutations
@@ -16,6 +17,10 @@ const mutations = {
   updateMessage(state, value){
     state.message = value;
   },
+  updateSelectedMenu(state, value){
+    state.selectedMenu = value;
+  },
+  
 };
 
 const actions = {};
@@ -24,6 +29,9 @@ const getters = {
   message(){
     return state.message;
   },
+  selectedMenu(){
+    return state.selectedMenu;
+  }
 }
 
 // 创建 store 实例

@@ -68,7 +68,7 @@ import { debuglog } from 'util';
                 let me = this
                 me.$refs[formName].validate((valid) => {
                     if (valid) {
-                        me.$router.push('/home')
+                        me.$router.push('/manage')
                     } else {
                         console.log('error submit!!');
                         return false;
@@ -92,7 +92,7 @@ import { debuglog } from 'util';
                                 }
                                 me.$message({message: '登录成功',type:'success', duration:config.duration})
                                 sessionStorage.setItem('token','8Tze3_nYY8bQkR2WYaMbqqgozfA0N-vl');
-                                me.$router.push('/home')
+                                me.$router.push('/manage')
                             }
                         }).catch(err => {
                             me.loginLoading = false

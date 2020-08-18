@@ -1,7 +1,6 @@
 <template>
     <div>
-        西西西西西西西西
-        西西西西西西西西
+        <h1>角色配置</h1>
     </div>
 </template>
 

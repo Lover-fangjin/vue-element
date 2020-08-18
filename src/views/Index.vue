@@ -1,14 +1,10 @@
 <template>
   <div class="home full-screen">
+    <Header>头部</Header>
     <base-layout>
-        <div slot="header" class="full-screen">
-          <Header />
-        </div>
-
         <div slot="main" class="full-screen">
           <router-view />
         </div>
-
         <div slot="aside" class="full-screen">
           <Aside />
         </div>
